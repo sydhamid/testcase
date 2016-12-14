@@ -1,0 +1,125 @@
+package com.example.tests;
+
+import java.util.regex.Pattern;
+import java.util.concurrent.TimeUnit;
+import org.junit.*;
+import static org.junit.Assert.*;
+import static org.hamcrest.CoreMatchers.*;
+import org.openqa.selenium.*;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.support.ui.Select;
+
+public class HijupLogoClick {
+  private WebDriver driver;
+  private String baseUrl;
+  private boolean acceptNextAlert = true;
+  private StringBuffer verificationErrors = new StringBuffer();
+
+  @Before
+  public void setUp() throws Exception {
+    driver = new FirefoxDriver();
+    baseUrl = "https://www.hijup.com/";
+    driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+  }
+
+  @Test
+  public void testHijupLogoClick() throws Exception {
+    driver.get(baseUrl + "/id/");
+    driver.findElement(By.cssSelector("div.main-nav-title")).click();
+    driver.findElement(By.cssSelector("img.hijup-logo-icon")).click();
+    driver.findElement(By.cssSelector("div.main-nav-title > span")).click();
+    driver.findElement(By.cssSelector("img.hijup-logo-icon")).click();
+    driver.findElement(By.xpath("//div[@id='app']/div/div[3]/header/div/div[3]/div/nav/li[3]/a/div")).click();
+    driver.findElement(By.cssSelector("img.hijup-logo-icon")).click();
+    driver.findElement(By.cssSelector("a.vendors-list-link > span")).click();
+    driver.findElement(By.cssSelector("img.hijup-logo-icon")).click();
+    driver.findElement(By.cssSelector("li > a.clothing-list-link > span")).click();
+    driver.findElement(By.cssSelector("img.hijup-logo-icon")).click();
+    driver.findElement(By.cssSelector("li.subcategories-item > a.subcategories-link > span")).click();
+    driver.findElement(By.cssSelector("img.hijup-logo-icon")).click();
+    driver.findElement(By.linkText("Ciput")).click();
+    driver.findElement(By.cssSelector("img.hijup-logo-icon")).click();
+    driver.findElement(By.cssSelector("div.large-6.column > ul.no-bullet > li.subcategories-item > a.subcategories-link > span")).click();
+    driver.findElement(By.cssSelector("img.hijup-logo-icon")).click();
+    driver.findElement(By.cssSelector("a.main-nav-link.sale-title > div.main-nav-title")).click();
+    driver.findElement(By.cssSelector("img.hijup-logo-icon")).click();
+    driver.findElement(By.xpath("//div[@id='app']/div/div[3]/header/div/div[3]/div/nav/li[11]/a/div")).click();
+    driver.findElement(By.cssSelector("a[title=\"Login ke account Anda\"] > span")).click();
+    driver.findElement(By.cssSelector("img.hijup-logo-icon")).click();
+    driver.findElement(By.cssSelector("a[title=\"Buat account HIJUP\"] > span")).click();
+    driver.findElement(By.cssSelector("img.hijup-logo-icon")).click();
+    driver.findElement(By.xpath("//div[@id='app']/div/div[3]/header/div/div/div/div[2]/div/a/span")).click();
+    driver.findElement(By.cssSelector("img.hijup-logo-icon")).click();
+    driver.findElement(By.xpath("//div[@id='app']/div/div[3]/header/div/div/div/div[2]/div/a[2]/span")).click();
+    driver.findElement(By.cssSelector("img.hijup-logo-icon")).click();
+    driver.findElement(By.cssSelector("img.bag-icon.header-icon")).click();
+    driver.findElement(By.cssSelector("img.hijup-logo-icon")).click();
+    driver.findElement(By.cssSelector("a[title=\"Informasi lebih jauh mengenai kami\"] > span")).click();
+    driver.findElement(By.cssSelector("img.hijup-logo-icon")).click();
+    driver.findElement(By.cssSelector("a[title=\"Lihat press release kami\"] > span")).click();
+    driver.findElement(By.cssSelector("img.hijup-logo-icon")).click();
+    driver.findElement(By.cssSelector("a[title=\"Lihat kebijakan situs kami\"] > span")).click();
+    driver.findElement(By.cssSelector("img.hijup-logo-icon")).click();
+    driver.findElement(By.cssSelector("a[title=\"Lihat syarat dan ketentuan kami\"] > span")).click();
+    driver.findElement(By.cssSelector("img.hijup-logo-icon")).click();
+    driver.findElement(By.cssSelector("a[title=\"Jadilah bagian dari kami di HIJUP\"] > span")).click();
+    driver.findElement(By.cssSelector("img.hijup-logo-icon")).click();
+    driver.findElement(By.cssSelector("a[title=\"Lihat cara menghubungi kami\"] > span")).click();
+    driver.findElement(By.cssSelector("img.hijup-logo-icon")).click();
+    driver.findElement(By.cssSelector("a[title=\"Lihat indeks produk kami\"] > span")).click();
+    driver.findElement(By.cssSelector("img.hijup-logo-icon")).click();
+    driver.findElement(By.cssSelector("a[title=\"Informasi cara pembayaran\"] > span")).click();
+    driver.findElement(By.cssSelector("img.hijup-logo-icon")).click();
+    driver.findElement(By.cssSelector("a[title=\"Informasi lengkap mengenai HIJUP Point\"] > span")).click();
+    driver.findElement(By.cssSelector("img.hijup-logo-icon")).click();
+    driver.findElement(By.cssSelector("a[title=\"Informasi lengkap mengenai pengiriman ke luar Indonesia\"] > span")).click();
+    driver.findElement(By.cssSelector("img.hijup-logo-icon")).click();
+    driver.findElement(By.cssSelector("a[title=\"Cari tahu ukuran pakaian Anda\"] > span")).click();
+    driver.findElement(By.cssSelector("img.hijup-logo-icon")).click();
+    driver.findElement(By.cssSelector("a[title=\"Cari tahu mengenai bahan pakaian anda dan cara merawatnya\"] > span")).click();
+    driver.findElement(By.cssSelector("img.hijup-logo-icon")).click();
+    driver.findElement(By.cssSelector("img.hijup-logo-icon")).click();
+  }
+
+  @After
+  public void tearDown() throws Exception {
+    driver.quit();
+    String verificationErrorString = verificationErrors.toString();
+    if (!"".equals(verificationErrorString)) {
+      fail(verificationErrorString);
+    }
+  }
+
+  private boolean isElementPresent(By by) {
+    try {
+      driver.findElement(by);
+      return true;
+    } catch (NoSuchElementException e) {
+      return false;
+    }
+  }
+
+  private boolean isAlertPresent() {
+    try {
+      driver.switchTo().alert();
+      return true;
+    } catch (NoAlertPresentException e) {
+      return false;
+    }
+  }
+
+  private String closeAlertAndGetItsText() {
+    try {
+      Alert alert = driver.switchTo().alert();
+      String alertText = alert.getText();
+      if (acceptNextAlert) {
+        alert.accept();
+      } else {
+        alert.dismiss();
+      }
+      return alertText;
+    } finally {
+      acceptNextAlert = true;
+    }
+  }
+}
